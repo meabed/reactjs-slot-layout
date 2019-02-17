@@ -1,0 +1,4 @@
+diff a/src/Context.ts b/src/Context.ts	(rejected hunks)
+@@ -4 +4 @@ import React from 'react'
+-const Context:React.Context<any> = React.createContext({})
++const Context: React.Context<any> = React.createContext({})

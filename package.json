@@ -1,0 +1,149 @@
+{
+  "name": "reactjs-layout-slot",
+  "private": false,
+  "version": "0.0.2",
+  "description": "reactjs slot based layout system",
+  "keywords": [
+    "reactjs",
+    "layout",
+    "react-layout",
+    "reactjs-layout",
+    "layout-slot",
+    "slot"
+  ],
+  "author": {
+    "email": "mo@meabed.com",
+    "name": "Mohamed Meabed",
+    "url": "https://twitter.com/meabed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/meabed/reactjs-layout-slot"
+  },
+  "license": "MIT",
+  "maintainers": [
+    {
+      "email": "mo@meabed.com",
+      "name": "Mohamed Meabed",
+      "url": "https://twitter.com/meabed"
+    }
+  ],
+  "main": "dist/reactjs-slot-layout.umd.js",
+  "module": "dist/reactjs-slot-layout.es5.js",
+  "typings": "dist/types/reactjs-slot-layout.d.ts",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "scripts": {
+    "lint": "tslint  --project tsconfig.json -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
+    "prebuild": "rimraf dist",
+    "build": "tsc --module commonjs && rollup -c rollup.config.ts && typedoc --out docs --target es6 --theme minimal --mode file src",
+    "start": "rollup -c rollup.config.ts -w",
+    "test": "jest --coverage",
+    "test:watch": "jest --coverage --watch",
+    "test:prod": "npm run lint && npm run test -- --no-cache",
+    "deploy-docs": "ts-node tools/gh-pages-publish",
+    "report-coverage": "cat ./coverage/lcov.info | coveralls",
+    "commit": "git-cz",
+    "semantic-release": "semantic-release",
+    "semantic-release-prepare": "ts-node tools/semantic-release-prepare",
+    "precommit": "lint-staged",
+    "travis-deploy-once": "travis-deploy-once"
+  },
+  "lint-staged": {
+    "{src,test}/**/*.ts": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
+  },
+  "jest": {
+    "transform": {
+      ".(ts|tsx)": "ts-jest"
+    },
+    "testEnvironment": "node",
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/test/"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 90,
+        "functions": 95,
+        "lines": 95,
+        "statements": 95
+      }
+    },
+    "collectCoverageFrom": [
+      "src/*.{js,ts}"
+    ]
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^7.5.2",
+    "@commitlint/config-conventional": "^7.5.0",
+    "@types/jest": "^24.0.5",
+    "@types/lodash.isplainobject": "^4.0.5",
+    "@types/node": "^11.9.4",
+    "@types/prop-types": "^15.5.9",
+    "@types/react": "^16.8.3",
+    "@types/react-dom": "^16.8.2",
+    "colors": "^1.3.3",
+    "commitizen": "^3.0.5",
+    "coveralls": "^3.0.2",
+    "cross-env": "^5.2.0",
+    "cz-conventional-changelog": "^2.1.0",
+    "husky": "^1.3.1",
+    "jest": "^24.1.0",
+    "jest-config": "^24.1.0",
+    "lint-staged": "^8.1.4",
+    "lodash.camelcase": "^4.3.0",
+    "prettier": "^1.16.4",
+    "prompt": "^1.0.0",
+    "prop-types": "15.7.2",
+    "react": "^16.8.2",
+    "react-dom": "^16.8.2",
+    "replace-in-file": "^3.4.3",
+    "rimraf": "^2.6.3",
+    "rollup": "^1.1.2",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-json": "^3.1.0",
+    "rollup-plugin-node-resolve": "^4.0.0",
+    "rollup-plugin-sourcemaps": "^0.4.2",
+    "rollup-plugin-typescript2": "^0.19.2",
+    "semantic-release": "^15.13.3",
+    "shelljs": "^0.8.3",
+    "travis-deploy-once": "^5.0.11",
+    "ts-jest": "^23.10.5",
+    "ts-node": "^8.0.2",
+    "tslint": "^5.12.1",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-config-standard": "^8.0.1",
+    "typedoc": "^0.14.2",
+    "typescript": "^3.3.3"
+  },
+  "dependencies": {
+    "lodash.isplainobject": "^4.0.6"
+  }
+}

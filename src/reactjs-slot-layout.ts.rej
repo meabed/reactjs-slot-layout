@@ -1,0 +1,10 @@
+diff a/src/reactjs-slot-layout.ts b/src/reactjs-slot-layout.ts	(rejected hunks)
+@@ -2,5 +2,3 @@
+-  // import "core-js/fn/array.find"
+-  // ...
+-export default class DummyClass {
+-
+-}
++// import "core-js/fn/array.find"
++// ...
++export default class DummyClass {}
