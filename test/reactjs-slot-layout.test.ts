@@ -1,4 +1,4 @@
-import DummyClass from '../src/reactjs-slot-layout'
+import * as Class from '../src/reactjs-slot-layout'
 
 /**
  * Dummy test
@@ -8,7 +8,7 @@ describe('Dummy test', () => {
     expect(true).toBeTruthy()
   })
 
-  it('DummyClass is instantiable', () => {
-    expect(new DummyClass()).toBeInstanceOf(DummyClass)
+  it('Class is instantiable', () => {
+    expect(Class.Section).toBeInstanceOf(Function)
   })
 })
