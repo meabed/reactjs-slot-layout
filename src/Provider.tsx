@@ -1,10 +1,10 @@
-import React  from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
-import { SectionProps } from './Section'
 import Context from './Context'
+
 export interface ProviderProps {
   layouts: any,
-    children: React.ReactNode,
+  children: JSX.Element,
 }
 
 class Provider extends React.PureComponent<ProviderProps, {}> {
@@ -19,7 +19,7 @@ class Provider extends React.PureComponent<ProviderProps, {}> {
     sections: null
   }
 
-  setData = ({ layout, sections }) => {
+  setData = ({ layout, sections }: any) => {
     if (!this.state.sections) {
       this.setState({ layout, sections })
     }
@@ -27,11 +27,11 @@ class Provider extends React.PureComponent<ProviderProps, {}> {
 
   render() {
     return (
-      <Context.Provider value={{
+      <Context.Provider value={ {
         ...this.state,
         setData: this.setData
-      }}>
-        {this.props.children}
+      } }>
+        { this.props.children }
       </Context.Provider>
     )
   }

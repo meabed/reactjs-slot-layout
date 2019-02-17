@@ -1,4 +1,6 @@
-// Import here Polyfills if needed. Recommended core-js (npm i -D core-js)
-// import "core-js/fn/array.find"
-// ...
-export default class DummyClass {}
+export { default as Consumer } from './Consumer'
+export { default as Context } from './Context'
+export { default as Page } from './Page'
+export { default as Provider } from './Provider'
+export { default as Section } from './Section'
+export { default as Slot } from './Slot'

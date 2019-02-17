@@ -1,21 +1,21 @@
-import React, { PureComponent } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import isPlainObject from 'lodash.isplainobject'
-import Consumer  from './Consumer'
-import { PageProps } from './Page'
+import Consumer from './Consumer'
 
 export interface PageProps {
-  layout: String,
+  layout: string,
   children: React.ReactNode,
 }
-class Page extends  React.Component<PageProps, {}> {
+
+class Page extends React.Component<PageProps, {}> {
 
   static propTypes = {
     layout: PropTypes.string.isRequired,
     children: PropTypes.node.isRequired
   }
 
-  getSections(parent) {
+  getSections(parent: any) {
     if (isPlainObject(parent)) {
       // Check if the element is a Section
       if (parent.type && parent.type.displayName === 'Section') {
@@ -23,8 +23,9 @@ class Page extends  React.Component<PageProps, {}> {
       }
       return {}
     } else if (Array.isArray(parent)) {
-      let sections = []
-      for (let i = 0, c = parent.length; i < c; i += 1) {
+      let sections = {}
+      let c = parent.length
+      for (let i = 0; i < c; i += 1) {
         sections = Object.assign({}, sections, this.getSections(parent[i]))
       }
       return sections
@@ -32,12 +33,13 @@ class Page extends  React.Component<PageProps, {}> {
     return {}
   }
 
-  getLayout(name, layouts, sections) {
+  getLayout(name: string, layouts: any[string], sections: any) {
     const layout = layouts[name]
     const children = this.props.children
     const props = { ...this.props }
     delete props.layout
     delete props.children
+    // @ts-ignore
     props.sections = sections
     return React.createElement(layout, props, children)
   }
@@ -45,16 +47,16 @@ class Page extends  React.Component<PageProps, {}> {
   render() {
     return (
       <Consumer>
-        {({ layouts }) => {
+        { ({ layouts }) => {
           const sections = this.getSections(this.props.children)
           const layout = this.getLayout(this.props.layout, layouts, sections)
 
           if (!layout) {
-            throw new Error(`No layout found named: '${this.props.layout}'`)
+            throw new Error(`No layout found named: '${ this.props.layout }'`)
           }
 
           return layout
-        }}
+        } }
       </Consumer>
     )
   }
