@@ -9,6 +9,7 @@ import { terser } from 'rollup-plugin-terser'
 import { getIfUtils, removeEmpty } from 'webpack-config-utils'
 
 import pkg from '../package.json'
+
 const {
   pascalCase,
   normalizePackageName,
@@ -76,7 +77,13 @@ const plugins = /** @type {Plugin[]} */ ([
  */
 const CommonConfig = {
   input: {},
-  output: {},
+  output: {
+    globals: {
+      react: 'React',
+      'react-dom': 'ReactDOM',
+      'prop-types': 'PropTypes',
+    },
+  },
   inlineDynamicImports: true,
   // Indicate here external modules you don't wanna include in your bundle (i.e.: 'lodash')
   external,
@@ -96,6 +103,11 @@ const UMDconfig = {
     format: 'umd',
     name: LIB_NAME,
     sourcemap: true,
+    globals: {
+      react: 'React',
+      'react-dom': 'ReactDOM',
+      'prop-types': 'PropTypes',
+    },
   },
   plugins: removeEmpty(
     /** @type {Plugin[]} */ ([...plugins, ifProduction(uglify())])
@@ -116,6 +128,11 @@ const FESMconfig = {
       ),
       format: 'es',
       sourcemap: true,
+      globals: {
+        react: 'React',
+        'react-dom': 'ReactDOM',
+        'prop-types': 'PropTypes',
+      },
     },
   ],
   plugins: removeEmpty(

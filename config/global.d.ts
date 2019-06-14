@@ -32,6 +32,7 @@ declare module 'rollup-plugin-json' {
      */
     indent?: string
   }
+
   const plugin: RollupPluginImpl<Options>
   export default plugin
 }
@@ -96,6 +97,7 @@ declare module 'replace-in-file' {
 
   interface API {
     (options: Partial<Options>): string[]
+
     sync(options: Partial<Options>): string[]
   }
 
@@ -108,10 +110,14 @@ declare module 'gzip-size' {
   type Input = string | Buffer
 
   function gzipSize(input: Input, options?: Options): Promise<number>
+
   namespace gzipSize {
     function sync(input: Input, options?: Options): number
+
     function stream(options?: Options): import('stream').PassThrough
+
     function file(path: string, options?: Options): Promise<number>
+
     function fileSync(path: string, options?: Options): number
   }
 
@@ -123,6 +129,7 @@ declare module 'brotli-size' {
 
   namespace brotliSize {
     function sync(input: Input): number
+
     function stream(): import('stream').PassThrough
   }
 

@@ -3,18 +3,18 @@ import React from 'react'
 import Context from './context'
 
 export interface ProviderProps {
-  layouts: {}
+  value: {}
   children: JSX.Element
 }
 
 export class Provider extends React.PureComponent<ProviderProps, {}> {
   static propTypes = {
-    layouts: PropTypes.objectOf(PropTypes.any).isRequired,
+    value: PropTypes.objectOf(PropTypes.any).isRequired,
     children: PropTypes.element.isRequired,
   }
 
   state = {
-    layouts: this.props.layouts,
+    layouts: this.props.value,
     layout: '',
     sections: null,
   }
