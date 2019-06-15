@@ -28,8 +28,11 @@
 
 ## ✨ Features
 
-- feature one
-- feature two
+- Easy layout management
+- Override layout from any component
+- Support for wrapped components and React Fragment
+- Handle multiple layouts with ease
+- Very lightweight ~ 5KB
 
 ## 🔧 Installation
 
