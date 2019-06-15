@@ -49,6 +49,8 @@ Let's demonstrate simple usage with ... example:
 
 Go checkout [examples](./examples) !
 
+[![Edit currying-fire-rm55g](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/currying-fire-rm55g?fontsize=14&view=preview)
+
 ## 📜 API
 
 > Document your API here
@@ -71,17 +73,6 @@ Today we're gonna build Foo....
 </details>
 
 ### 🕵️ Troubleshooting
-
-#### todo
-
-- Add example with html
-- Aad vscodeonline online links
-- Demos
-- more forms classes
-- refactoring
-- auto publishing npm
-- add more tests
-- add more components
 
 ## Contributing
 

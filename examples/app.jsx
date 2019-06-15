@@ -154,7 +154,7 @@ const OneColumnPage = () => (
         <h3 className='text-center'>One Column Content Example</h3>
       </Section>
       <Section slot='footer'>
-        <h3 className='text-center'>Override / Change Footer Content Section</h3>
+        <h3 className='text-center text-danger'>Override / Change Footer Content Section</h3>
         <pre>
           <code>
             &#x3C;Section slot=&#x27;footer&#x27;&#x3E;
@@ -189,6 +189,11 @@ const TwoColumnLeft = () => (
       </Section>
       <Section slot='content'>
         <h3>Two Column Left Main Content Example</h3>
+      </Section>
+      <Section slot='footer'>
+        <h3 className='text-center text-danger'>
+          Override / Change Footer Content Section
+        </h3>
       </Section>
     </Page>
   </React.Fragment>
