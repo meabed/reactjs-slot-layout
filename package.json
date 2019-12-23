@@ -88,6 +88,7 @@
     "@types/pretty-bytes": "5.2.0",
     "@types/prop-types": "15.7.3",
     "@types/react": "^16.9.17",
+    "@types/react-dom": "^16.9.4",
     "@types/rollup-plugin-json": "3.0.2",
     "@types/rollup-plugin-sourcemaps": "0.4.2",
     "@types/shelljs": "0.8.6",
