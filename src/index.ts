@@ -1,4 +1,4 @@
-export * from './page'
-export * from './provider'
-export * from './section'
-export * from './slot'
+export { Page } from './page'
+export { Provider } from './provider'
+export { Section } from './section'
+export { Slot } from './slot'
