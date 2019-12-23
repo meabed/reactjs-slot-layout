@@ -1,4 +1,4 @@
-import { Slot } from './../'
+import { Slot } from '../slot'
 
 describe('Page test', () => {
   it('works if true is truthy', () => {

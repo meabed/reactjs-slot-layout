@@ -1,4 +1,4 @@
-import { Section } from './../'
+import { Section } from '../section'
 
 describe('Page test', () => {
   it('works if true is truthy', () => {

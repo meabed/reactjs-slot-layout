@@ -1,4 +1,4 @@
-import { Provider } from './../'
+import { Provider } from '../provider'
 
 describe('Page test', () => {
   it('works if true is truthy', () => {

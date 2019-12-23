@@ -1,4 +1,4 @@
-import { Page } from './../'
+import { Page } from '../page'
 
 describe('Page test', () => {
   it('works if true is truthy', () => {
