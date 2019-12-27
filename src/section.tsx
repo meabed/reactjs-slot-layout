@@ -6,7 +6,7 @@ export interface SectionProps {
 }
 
 export function Section(props: SectionProps) {
-  return 'You must only use <Section> inside a <Page>'
+  return <>You must only use Section inside a Page </>
   // return (this.props.children);
 }
 
