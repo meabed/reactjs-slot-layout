@@ -1,5 +1,4 @@
 import isPlainObject from 'lodash.isplainobject'
-import PropTypes from 'prop-types'
 import React from 'react'
 import Consumer from './consumer'
 
@@ -8,13 +7,8 @@ export interface PageProps {
   children: React.ReactNode
 }
 
-export class Page extends React.Component<PageProps, {}> {
-  static propTypes = {
-    layout: PropTypes.string.isRequired,
-    children: PropTypes.node.isRequired,
-  }
-
-  getSections(parent: any) {
+export function Page(props: PageProps) {
+  function getSections(parent: any) {
     if (isPlainObject(parent)) {
       // Check if the element is a Section
       if (parent.type && parent.type.displayName === 'Section') {
@@ -26,7 +20,7 @@ export class Page extends React.Component<PageProps, {}> {
       let sections = {}
       const c = parent.length
       for (let i = 0; i < c; i += 1) {
-        sections = Object.assign({}, sections, this.getSections(parent[i]))
+        sections = Object.assign({}, sections, getSections(parent[i]))
       }
 
       return sections
@@ -35,34 +29,32 @@ export class Page extends React.Component<PageProps, {}> {
     return {}
   }
 
-  getLayout(name: string, layouts: any[string], sections: any) {
+  function getLayout(name: string, layouts: any[string], sections: any) {
     const layout = layouts[name]
-    const children = this.props.children
-    const props = { ...this.props }
-    delete props.layout
-    delete props.children
+    const { children } = props
+    const newProps = { ...props }
+    delete newProps.layout
+    delete newProps.children
     // @ts-ignore
-    props.sections = sections
+    newProps.sections = sections
 
-    return React.createElement(layout, props, children)
+    return React.createElement(layout, newProps, children)
   }
 
-  render() {
-    return (
-      <Consumer>
-        {({ layouts }) => {
-          const sections = this.getSections(this.props.children)
-          const layout = this.getLayout(this.props.layout, layouts, sections)
+  return (
+    <Consumer>
+      {({ layouts }) => {
+        const sections = getSections(props.children)
+        const layout = getLayout(props.layout, layouts, sections)
 
-          if (!layout) {
-            throw new Error(`No layout found named: '${this.props.layout}'`)
-          }
+        if (!layout) {
+          throw new Error(`No layout found named: '${props.layout}'`)
+        }
 
-          return layout
-        }}
-      </Consumer>
-    )
-  }
+        return layout
+      }}
+    </Consumer>
+  )
 }
 
 export default Page

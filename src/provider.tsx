@@ -1,5 +1,4 @@
-import PropTypes from 'prop-types'
-import React from 'react'
+import React, { useState } from 'react'
 import Context from './context'
 
 export interface ProviderProps {
@@ -7,36 +6,25 @@ export interface ProviderProps {
   children: JSX.Element
 }
 
-export class Provider extends React.PureComponent<ProviderProps, {}> {
-  static propTypes = {
-    value: PropTypes.objectOf(PropTypes.any).isRequired,
-    children: PropTypes.element.isRequired,
-  }
+export function Provider(props: ProviderProps) {
+  const [layouts, setLayouts] = useState(props.value)
+  const [layout, setLayout] = useState()
+  const [sections, setSections] = useState(null)
 
-  state = {
-    layouts: this.props.value,
-    layout: '',
-    sections: null,
-  }
-
-  setData = ({ layout, sections }: any) => {
-    if (!this.state.sections) {
-      this.setState({ layout, sections })
-    }
-  }
-
-  render() {
-    return (
-      <Context.Provider
-        value={{
-          ...this.state,
-          setData: this.setData,
-        }}
-      >
-        {this.props.children}
-      </Context.Provider>
-    )
-  }
+  return (
+    <Context.Provider
+      value={{
+        layouts,
+        layout,
+        sections,
+        setLayout,
+        setSections,
+        setLayouts,
+      }}
+    >
+      {props.children}
+    </Context.Provider>
+  )
 }
 
 export default Provider
