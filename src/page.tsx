@@ -4,6 +4,9 @@ import Consumer from './consumer'
 
 export interface PageProps {
   layout: string
+  className?: string
+  styles?: any
+  meta?: any
   children: React.ReactNode
 }
 
@@ -30,11 +33,8 @@ export function Page(props: PageProps) {
   }
 
   function getLayout(name: string, layouts: any[string], sections: any) {
+    const { children, layout: _, ...newProps } = props
     const layout = layouts[name]
-    const { children } = props
-    const newProps = { ...props }
-    delete newProps.layout
-    delete newProps.children
     // @ts-ignore
     newProps.sections = sections
 
