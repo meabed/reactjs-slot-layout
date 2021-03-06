@@ -1,4 +1,4 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-commitlint --config config/commitlint.config.js --edit $1
+node_modules/.bin/commitlint --config config/commitlint.config.js --edit $1
