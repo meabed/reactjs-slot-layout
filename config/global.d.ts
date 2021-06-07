@@ -10,9 +10,8 @@ declare namespace NodeJS {
 // ============================
 // Rollup plugins without types
 // ============================
-type RollupPluginImpl<
-  O extends object = object
-> = import('rollup').PluginImpl<O>
+type RollupPluginImpl<O extends object = object> =
+  import('rollup').PluginImpl<O>
 
 declare module 'rollup-plugin-json' {
   export interface Options {
