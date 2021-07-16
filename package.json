@@ -1,7 +1,7 @@
 {
   "name": "reactjs-slot-layout",
   "private": false,
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "reactjs slot based layout system",
   "keywords": [
     "layout",
