@@ -71,8 +71,8 @@
     "react-dom": ">=17.0.2"
   },
   "devDependencies": {
-    "@commitlint/cli": "13.2.1",
-    "@commitlint/config-conventional": "13.2.0",
+    "@commitlint/cli": "14.1.0",
+    "@commitlint/config-conventional": "14.1.0",
     "@types/jest": "27.0.2",
     "@types/json5": "2.2.0",
     "@types/lodash.isplainobject": "4.0.6",
@@ -102,7 +102,7 @@
     "prop-types": "15.7.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "rollup": "2.58.3",
+    "rollup": "2.59.0",
     "rollup-plugin-commonjs": "10.1.0",
     "rollup-plugin-json": "4.0.0",
     "rollup-plugin-node-resolve": "5.2.0",
