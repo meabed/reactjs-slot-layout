@@ -4,9 +4,7 @@ const { promisify } = require('util')
 const readFile = promisify(readFileCb)
 
 const kolor = require('kleur')
-const prettyBytes = require('pretty-bytes')
 const brotliSize = require('brotli-size')
-const gzipSize = require('gzip-size')
 const { log } = console
 const pkg = require('../package.json')
 
@@ -56,7 +54,7 @@ function getFormatedOutput(pkgName, filesOutput) {
  * @param {boolean} raw
  */
 function formatSize(size, filename, type, raw) {
-  const pretty = raw ? `${size} B` : prettyBytes(size)
+  const pretty = raw ? `${size} B` : size.toString()
   const color = size < 5000 ? 'green' : size > 40000 ? 'red' : 'yellow'
   const MAGIC_INDENTATION = type === 'br' ? 13 : 10
 
@@ -73,7 +71,6 @@ function formatSize(size, filename, type, raw) {
  */
 async function getSizeInfo(code, filename, raw = false) {
   const isRaw = raw || code.length < 5000
-  const gzip = formatSize(await gzipSize(code), filename, 'gz', isRaw)
   const brotli = formatSize(await brotliSize.sync(code), filename, 'br', isRaw)
-  return gzip + '\n' + brotli
+  return brotli
 }
