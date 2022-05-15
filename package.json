@@ -71,7 +71,7 @@
     "react-dom": ">=17.0.2"
   },
   "devDependencies": {
-    "@commitlint/cli": "16.2.4",
+    "@commitlint/cli": "16.3.0",
     "@commitlint/config-conventional": "16.2.4",
     "@types/jest": "27.5.1",
     "@types/json5": "2.2.0",
@@ -97,7 +97,7 @@
     "prettier": "2.6.2",
     "react": "18.1.0",
     "react-dom": "18.1.0",
-    "rollup": "2.72.1",
+    "rollup": "2.73.0",
     "rollup-plugin-commonjs": "10.1.0",
     "rollup-plugin-json": "4.0.0",
     "rollup-plugin-node-resolve": "5.2.0",
@@ -107,7 +107,7 @@
     "rollup-plugin-uglify": "6.0.4",
     "shelljs": "0.8.5",
     "shx": "0.3.4",
-    "standard-version": "9.3.2",
+    "standard-version": "9.5.0",
     "ts-jest": "28.0.2",
     "tslib": "2.4.0",
     "tslint": "6.1.3",
