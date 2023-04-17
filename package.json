@@ -71,8 +71,8 @@
     "react-dom": ">=17.0.2"
   },
   "devDependencies": {
-    "@commitlint/cli": "17.5.1",
-    "@commitlint/config-conventional": "17.4.4",
+    "@commitlint/cli": "17.6.1",
+    "@commitlint/config-conventional": "17.6.1",
     "@types/jest": "29.5.0",
     "@types/json5": "2.2.0",
     "@types/lodash.isplainobject": "4.0.7",
@@ -97,7 +97,7 @@
     "prettier": "2.8.7",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "rollup": "3.20.2",
+    "rollup": "3.20.4",
     "rollup-plugin-commonjs": "10.1.0",
     "rollup-plugin-json": "4.0.0",
     "@rollup/plugin-node-resolve": "15.0.2",
@@ -115,7 +115,7 @@
     "tslint-config-standard": "9.0.0",
     "tslint-etc": "1.13.10",
     "tslint-react": "5.0.0",
-    "typedoc": "0.24.1",
+    "typedoc": "0.24.4",
     "typescript": "5.0.4",
     "typescript-tslint-plugin": "1.0.2",
     "webpack-config-utils": "2.3.1"
