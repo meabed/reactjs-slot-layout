@@ -73,10 +73,10 @@
   "devDependencies": {
     "@commitlint/cli": "17.6.1",
     "@commitlint/config-conventional": "17.6.1",
-    "@types/jest": "29.5.0",
+    "@types/jest": "29.5.1",
     "@types/json5": "2.2.0",
     "@types/lodash.isplainobject": "4.0.7",
-    "@types/node": "18.15.11",
+    "@types/node": "18.15.12",
     "@types/prettier": "2.7.2",
     "@types/react": "18.0.37",
     "@types/react-dom": "18.0.11",
