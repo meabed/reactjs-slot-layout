@@ -97,7 +97,7 @@
     "prettier": "3.0.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "rollup": "3.29.4",
+    "rollup": "4.0.2",
     "rollup-plugin-commonjs": "10.1.0",
     "rollup-plugin-json": "4.0.0",
     "@rollup/plugin-node-resolve": "15.2.2",
