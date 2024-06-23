@@ -76,7 +76,7 @@
     "@types/jest": "29.5.12",
     "@types/json5": "2.2.0",
     "@types/lodash.isplainobject": "4.0.9",
-    "@types/node": "20.14.7",
+    "@types/node": "20.14.8",
     "@types/prettier": "3.0.0",
     "@types/react": "18.3.3",
     "@types/react-dom": "18.3.0",
@@ -115,7 +115,7 @@
     "tslint-config-standard": "9.0.0",
     "tslint-etc": "1.13.10",
     "tslint-react": "5.0.0",
-    "typedoc": "0.26.0",
+    "typedoc": "0.26.1",
     "typescript": "5.5.2",
     "typescript-tslint-plugin": "1.0.2",
     "webpack-config-utils": "2.3.1"
